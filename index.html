@@ -29,7 +29,7 @@ h1 {
     <script>
     var d = document.getElementById('board')
     
-    function move() {
+    function move(var x , var y) {
     console.log("move x: " + x + " y: " + y)
       var leftNumbers = d.style.left.replace('px', '')
   var left = parseInt(leftNumbers, 10)
@@ -39,8 +39,8 @@ h1 {
   }
     }
     
-    setTimeout(move(), 1000)
-    setTimeout(move(), 1000)
+    setTimeout(move(1,1), 1000)
+    setTimeout(move(1,1), 1000)
     
     
     
