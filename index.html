@@ -35,8 +35,10 @@ h1 {
     function move(x, y) {
     console.log("move x: " + x + " y: " + y)
       var leftNumbers = d.style.left.replace('px', '')
+      console.log(leftNumbers)
       
       var leftN = parseInt(leftNumbers, 10)
+      console.log(leftN)
 
     d.style.left = `${leftN + x}px`
   
