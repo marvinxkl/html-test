@@ -31,11 +31,11 @@ h1 {
     
     function move(x, y) {
     console.log("move x: " + x + " y: " + y)
-      var leftNumbers = d.style.left.replace('px', '')
-  var left = parseInt(leftNumbers, 10)
+      var leftNumbers = d.style.right.replace('px', '')
+  var right = parseInt(leftNumbers, 10)
 
   if (left > 0) {
-    d.style.left = `${left - x}px`
+    d.style.left = `${right - x}px`
   }
     }
     
