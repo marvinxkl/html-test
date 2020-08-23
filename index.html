@@ -37,10 +37,9 @@ h1 {
       var leftNumbers = d.style.left.replace('px', '')
       console.log(leftNumbers)
       
-      var leftN = parseInt(leftNumbers, 10)
-      console.log(leftN)
+      var add = leftNumbers+x
 
-    d.style.left = `${leftNumbers + x}px`
+    d.style.left = add + "px"
   
     }
     
