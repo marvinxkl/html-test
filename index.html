@@ -28,6 +28,22 @@ h1 {
   </div>
     <script>
     var d = document.getElementById('board')
+    
+    function move() {
+    console.log("move x: " + x + " y: " + y)
+      var leftNumbers = d.style.left.replace('px', '')
+  var left = parseInt(leftNumbers, 10)
+
+  if (left > 0) {
+    d.style.left = `${left - 1}px`
+  }
+    }
+    
+    setTimeout(move(), 1000)
+    setTimeout(move(), 1000)
+    
+    
+    
     </script>
    
 </body>
