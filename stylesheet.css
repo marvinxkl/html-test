@@ -1,16 +1,4 @@
-<!doctype html>
-<html lang="de">
-  <head>
-    <style>
-
-    h1 { 
-       background-color: green;
-       color: white;
-    }
-    p {
-    	text-align: center; 
-    	color: green;
-    }
-
-    </style>
-  </head>
+h1 { 
+  background-color: green;
+  color: white;
+}
