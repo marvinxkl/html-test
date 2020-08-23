@@ -16,6 +16,9 @@ h1 {
   height: 30px;
   width: 30px;
   margin: 50px;
+  position: absolute;
+  left: 0px;
+  top 0px;
 }
 </style>
 
@@ -31,16 +34,14 @@ h1 {
     
     function move(x, y) {
     console.log("move x: " + x + " y: " + y)
-      var leftNumbers = d.style.right.replace('px', '')
-  var right = parseInt(leftNumbers, 10)
+      var leftNumbers = d.style.left.replace('px', '')
 
-  if (right > 0) {
-    d.style.right = `${right - x}px`
-  }
+    d.style.right = `${leftNumbers + x}px`
+  
     }
     
-    setTimeout(move, 5000, 100, 1)
-    setTimeout(move, 5000, 10, 1)
+    setTimeout(move, 2000, 50, 1)
+    setTimeout(move, 5000, 50, 1)
     
     
     
