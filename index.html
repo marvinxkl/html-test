@@ -3,7 +3,14 @@
   <head>
 <style>
 body {
-  background-color: linen;
+  background-color: aqua;
+  height: 100%;
+  width: 100%;
+  background-image: url('meer.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
 }
 
 h1 {
@@ -12,39 +19,89 @@ h1 {
 } 
 
 #board {
-  background-color: green;
-  height: 30px;
-  width: 30px;
-  margin: 50px;
+  background-image: url('board.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: absolute;
   left: 0px;
-  top 0px;
+  top: 0px;
+  z-index: 2;
 }
 </style>
 
 
-    <title>Niemals schließen!!!!!</title>
+    <title>Alohaaaaaa</title>
   </head>
   <body>
-  <div id="board">
-
+ 
+    <a href="https://www.wasserski-stleon.de/" >
+    <div id="board">
   </div>
+</a>
     <script>
+    let width = window.innerWidth
+    let height = window.innerHeight
+
+    let leftStep = (width - width / 50) / 100
+    let topStep = (height - height / 50) / 100
+
+
+    console.log("hight: " + height + " width: " + width)
+
+
     var d = document.getElementById('board')
-    
+    d.style.width = 12 *leftStep + "px";
+    d.style.height = 12 *leftStep + "px";
+    d.style.left = 6 *leftStep + "px";
+    d.style.top = 5 * topStep + "px";
+
     function move(x, y) {
     console.log("move x: " + x + " y: " + y)
-      var leftNumbers = d.style.left.replace('px', '')
-      console.log(leftNumbers)
-      
-      var add = leftNumbers+x
 
-    d.style.left = add + "px"
+    var leftNumbers = d.style.left.replace('px', '')
+    var topNumbers = d.style.top.replace('px', '')
+    
+    var top = parseInt(topNumbers)
+    var left = parseInt(leftNumbers)
+
+    left = left + (x * leftStep)
+    top = top + (y * topStep)
+
+    d.style.left = left + "px"
+    d.style.top = top + "px"
+
+    console.log("position: left " + d.style.left + " top: " + d.style.top)
   
     }
+
+    function setPosition(){
+    d.style.left = 6 *leftStep + "px";
+    d.style.top = 5 * topStep + "px";
+    }
+
+    function moveIt(){
+ 
+    var i1 = setInterval(move, 50, 0.0, 0.35)
+    setTimeout(clearInterval, 6500, i1)
+
+    var i2 = setInterval(move, 50, 0.0, -0.15) 
+    setTimeout(clearInterval, 13000, i2)
+
+    var i3 = setInterval(move, 50, 0.1, 0.35) 
+    setTimeout(clearInterval, 18000, i3)
+
+    var i4 = setInterval(move, 50, 0.0, -0.25) 
+    setTimeout(clearInterval, 21000, i4)
+
+    var i5 = setInterval(move, 50, 0.1, 0.1) 
+    setTimeout(clearInterval, 32000, i5)
+
+    setTimeout(setPosition, 32000)
+    }
     
-    setTimeout(move, 2000, 50, 1)
-    setTimeout(move, 5000, 50, 1)
+    moveIt()
+    setInterval(moveIt, 32000)
     
     
     
